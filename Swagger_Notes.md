@@ -10,7 +10,7 @@
     <version>1.9.1.RELEASE</version>
 </dependency>
 ```
-（这里最好用spring-boot-starter-parent的2.1.7版本，以便与1.9.1匹配, 详见：  
+（注意：这里要用spring-boot-starter-parent的2.1.7版本，以便与1.9.1匹配, 否则报错、启动失败。详见：  
 https://github.com/lisz1012/SpringbootStudy/blob/master/pom.xml ）
 - 在启动类(如：SpringbootStudyApplication.java)定义的上面写上注解：`@EnableSwagger2Doc`
 - 写好自己的Controller（带有@RestController或者@Controller注解的）
