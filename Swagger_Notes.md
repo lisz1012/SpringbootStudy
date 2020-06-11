@@ -17,6 +17,9 @@ https://github.com/lisz1012/SpringbootStudy/blob/master/pom.xml ）
 - 启动Springboot项目（也可以运行启动类的main方法）
 - 访问本地 Swagger UI：http://localhost:8080/swagger-ui.html
 - 选择要测试的Controller
+- 选择需要测试的API，点击"Try it out"
+- 对于需要参数的API，输入参数值
+- Execute
 
 另外，在 http://localhost:8080/v2/api-docs 中可以访问类似 https://editor.swagger.io/ 中左侧部分的API定义描述代码，
 只是浏览器显示的格式比较乱
