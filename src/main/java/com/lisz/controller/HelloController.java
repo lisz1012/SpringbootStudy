@@ -10,8 +10,8 @@ public class HelloController {
     }
 
     @PostMapping("/hello-world")
-    public String hellowWorld() {
-        return "hellow world!";
+    public String hellowWorld(@RequestParam(name = "name1") String name, @RequestParam int age) {
+        return "name: " + name + " age: " + (age + 1);
     }
 
     @PutMapping("/put")
