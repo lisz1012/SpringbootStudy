@@ -22,4 +22,6 @@ https://github.com/lisz1012/SpringbootStudy/blob/master/pom.xml ）
 - Execute
 
 另外，在 http://localhost:8080/v2/api-docs 中可以访问类似 https://editor.swagger.io/ 中左侧部分的API定义描述代码，
-只是浏览器显示的格式比较乱
+只是浏览器显示的格式比较乱  
+
+Gradle和Maven依赖的查询：https://mvnrepository.com/
