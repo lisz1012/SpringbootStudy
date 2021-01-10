@@ -1,0 +1,9 @@
+server:
+  port: 8082
+person:
+  name: lisz
+  age: 12
+  gender: male
+  likes:
+    - books
+    - movie
