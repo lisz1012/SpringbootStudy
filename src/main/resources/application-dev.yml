@@ -1,0 +1,6 @@
+server:
+  port: 8080
+#也可以在程序启动设置里面加一个VM Option： -Dspring.profiles.active=dev
+spring:
+  profiles:
+    active: dev

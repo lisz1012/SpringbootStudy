@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8084
 person:
   name: lisz
   age: 12
@@ -7,3 +7,9 @@ person:
   likes:
     - books
     - movie
+  last_name: Li
+  email: lisz1012@gmail.com
+#也可以在程序启动设置里面加一个VM Option： -Dspring.profiles.active=dev
+spring:
+  profiles:
+    active: dev

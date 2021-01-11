@@ -1,0 +1,6 @@
+server:
+  port: 8081
+#也可以在程序启动设置里面加一个VM Option： -Dspring.profiles.active=prod
+spring:
+  profiles:
+    active: prod
