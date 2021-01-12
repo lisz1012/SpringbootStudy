@@ -4,3 +4,14 @@ server:
 spring:
   profiles:
     active: dev
+#随机值，每次启动的时候随机取一次，之后只要不重启就不变了
+my:
+  secret: ${random.value}
+  number: ${random.int}
+  bignumber: ${random.long}
+  uuid: ${random.uuid}
+  less:
+    than:
+      ten: ${random.int(10)}
+  in:
+    range: ${random.int[100,200]}
