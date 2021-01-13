@@ -1,10 +1,12 @@
 package com.lisz;
 
+import com.lisz.listener.MyListener;
 import com.lisz.servlet.MyServlet;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -24,6 +26,12 @@ public class SpringbootStudyApplication {
 	public ServletRegistrationBean<MyServlet> getServletRegistrationBean(){
 		ServletRegistrationBean<MyServlet> bean = new ServletRegistrationBean<>(new MyServlet(), "/s2"); // 会把Servlet的@WebServlet中的urlPatterns的值给覆盖掉,可以这里决定Filter和Servlet的顺序
 		bean.setLoadOnStartup(1);
+		return bean;
+	}
+
+	@Bean
+	public ServletListenerRegistrationBean<MyListener> getServletListenerRegistrationBean(){
+		ServletListenerRegistrationBean<MyListener> bean = new ServletListenerRegistrationBean<>(new MyListener());
 		return bean;
 	}
 }

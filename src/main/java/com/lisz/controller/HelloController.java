@@ -1,13 +1,18 @@
 package com.lisz.controller;
 
 import com.lisz.entity.Numbers;
+import com.lisz.listener.MyListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @RestController
 public class HelloController {
     @Autowired
     private Numbers numbers;
+
     @GetMapping("/hello")
     public String hello() {
         return "hello xiaolu!";
@@ -23,5 +28,11 @@ public class HelloController {
     @PutMapping("/put")
     public String put (){
         return "put";
+    }
+
+    @GetMapping("/online")
+    public String online(HttpSession session){
+        session.setAttribute("a", "b");
+        return "当前在线人数: " + MyListener.online;
     }
 }
