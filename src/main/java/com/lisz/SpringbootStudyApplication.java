@@ -22,7 +22,7 @@ public class SpringbootStudyApplication {
 
 	@Bean
 	public ServletRegistrationBean<MyServlet> getServletRegistrationBean(){
-		ServletRegistrationBean<MyServlet> bean = new ServletRegistrationBean<>(new MyServlet(), "/s2"); // 会把Servlet的@WebServlet中的urlPatterns的值给覆盖掉
+		ServletRegistrationBean<MyServlet> bean = new ServletRegistrationBean<>(new MyServlet(), "/s2"); // 会把Servlet的@WebServlet中的urlPatterns的值给覆盖掉,可以这里决定Filter和Servlet的顺序
 		bean.setLoadOnStartup(1);
 		return bean;
 	}
