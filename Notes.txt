@@ -1,0 +1,29 @@
+ResourceProperties中的CLASSPATH_RESOURCE_LOCATIONS指定了在这些目录下可以放置静态文件：
+{ "classpath:/META-INF/resources/",
+			"classpath:/resources/", "classpath:/static/", "classpath:/public/" }
+
+WebMvcAutoConfiguration（这个类很有用）中用到了上述信息。同名的文件如果都出现在resources，static，public中，则resources优先级最高，
+依次递减
+
+同理，仿照：
+@ConfigurationProperties(prefix = "spring.resources", ignoreUnknownFields = false)
+public class ResourceProperties {
+    ...
+}
+的写法，我们可以写能在yml中配置的类的各个属性了^_^
+
+https://www.webjars.org 可以把前端的依赖加入pom文件，webjars里面的例如js文件，也能读
+
+以上几个目录里面，第一个含有index.html的就是欢迎（默认索引）页面：
+        private Optional<Resource> getWelcomePage() {
+			String[] locations = getResourceLocations(this.resourceProperties.getStaticLocations());
+			return Arrays.stream(locations).map(this::getIndexHtml).filter(this::isReadable).findFirst();
+		}
+
+		private Resource getIndexHtml(String location) {
+			return this.resourceLoader.getResource(location + "index.html");
+		}
+
+下面的注解是说：只有符合了某些条件才会生效
+@ConditionalOnBean(ViewResolver.class)
+@ConditionalOnMissingBean(name = "viewResolver", value = ContentNegotiatingViewResolver.class)
