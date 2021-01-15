@@ -4,6 +4,9 @@ server:
 spring:
   profiles:
     active: dev
+  # 国际化的时候要配置
+  messages:
+    basename: i18n/login
 #随机值，每次启动的时候随机取一次，之后只要不重启就不变了
 my:
   secret: ${random.value}
